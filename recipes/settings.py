@@ -310,7 +310,7 @@ if REMOTE_USER_AUTH:
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
-Default_Validators = """[
+default_validators = """[
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
@@ -324,7 +324,7 @@ Default_Validators = """[
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]"""
-AUTH_PASSWORD_VALIDATORS = ast.literal_eval(os.getenv('AUTH_PASSWORD_VALIDATORS', Default_Validators)) 
+AUTH_PASSWORD_VALIDATORS = ast.literal_eval(os.getenv('AUTH_PASSWORD_VALIDATORS', default_validators))
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
